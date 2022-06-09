@@ -7,21 +7,21 @@
 
 void bubble_sort(int *array, size_t size)
 {
-    i = 0;
-    j = i + 1;
+    size_t i = 0;
+    size_t j = 1;
+    int swap;
 
-    for (; i < size; i++);
+    for (; i < size; i++)
     {
-        for (; j <= size; j++)
+        for (; j < size - i; j++)
         {
             if (array[i] > array[j])
             {
-                swap = array[i]
-                array[j] = array[i]
-                array[i] = swap
+                swap = array[i];
+                array[i] = array[j];
+                array[j] = swap;
             }
-            print_array(array, size);
+	    
         }
-        
-    }
+    }print_array(array, size);
 }
