@@ -18,21 +18,17 @@ void selection_sort(int *array, size_t size)
 	if (array == NULL)
 		return;
 
-	for (i = 0; i < size; i++)
+	for (i = 0; i < size - 1; i++)
 	{
 		h = i;
-		j = i + 1;
 
-		for (; j < size; j++)
-		{
+		for (j = i + 1; j < size; j++)
 			if (array[j] < array[h])
 				h = j;
 
-			swap = array[i];
-			array[i] = array[h];
-			array[h] = swap;
-		}
-		if (h != i)
-			print_array(array, size);
+		swap = array[i];
+		array[i] = array[h];
+		array[h] = swap;
+		print_array(array, size);
 	}
 }
